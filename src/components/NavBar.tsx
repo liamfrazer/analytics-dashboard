@@ -8,7 +8,6 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { useSidebar } from "@/components/ui/sidebar";
-import { Separator } from "@/components/ui/separator";
 
 import ThemeToggler from "@/components/ThemeToggler";
 
@@ -26,7 +25,6 @@ const NavBar = () => {
 				<Link className="flex items-center mr-2" href="/">
 					Analytics Dashboard
 				</Link>
-				{/* <Separator orientation="vertical" className="mr-2 h-6 dark:bg-slate-700 bg-gray-300" /> */}
 				<div className="flex items-center ml-auto">
 					<Button variant="outline" size="icon" className="dark:bg-slate-700 dark:hover:bg-slate-600 bg-gray-300 hover:bg-gray-400 border-0 mr-2 transition-colors h-7">
 						<Link href="https://github.com/liamfrazer/analytics-dashboard">
