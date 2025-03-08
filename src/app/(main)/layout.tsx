@@ -1,19 +1,27 @@
+import { cookies } from "next/headers";
+
+import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
+
 import NavBar from "@/components/NavBar";
 import SideBar from "@/components/SideBar";
 
-const MainLayout = ({ children }: { children: React.ReactNode }) => {
+const MainLayout = async ({ children }: { children: React.ReactNode }) => {
+	// Save Sidebar state across different pages
+	const cookieStore = await cookies();
+	const defaultOpen = cookieStore.get("sidebar_state")?.value === "true";
+
 	return (
-		<>
-			<NavBar />
-			<div className="flex">
-				<div className="hidden md:block h-[138vh] w-[200px]">
+		<div className="[--header-height:calc(theme(spacing.10))]">
+			<SidebarProvider className="flex flex-col" defaultOpen={defaultOpen}>
+				<NavBar />
+				<div className="flex flex-1">
 					<SideBar />
+					<SidebarInset>
+						<main>{children}</main>
+					</SidebarInset>
 				</div>
-				<div>
-					<>{children}</>
-				</div>
-			</div>
-		</>
+			</SidebarProvider>
+		</div>
 	);
 };
 

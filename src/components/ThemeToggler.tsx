@@ -13,7 +13,7 @@ const ThemeToggler = () => {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
-				<Button variant="outline" size="icon" className="dark:bg-slate-700 dark:hover:bg-slate-600 bg-gray-300 hover:bg-gray-400 border-0 mr-2 p-2">
+				<Button variant="outline" size="icon" className="dark:bg-slate-700 dark:hover:bg-slate-600 bg-gray-300 hover:bg-gray-400 border-0 mr-2 p-2 h-7">
 					<Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
 					<Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
 					<span className="sr-only">Toggle theme</span>
